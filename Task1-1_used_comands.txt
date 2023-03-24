@@ -1,0 +1,53 @@
+useradd -m -d /home/Raymond -g sudo -s /bin/bash Raymond
+useradd -m -d /home/John -g users -s /bin/bash John
+
+passswd John
+passswd Raymond
+
+su Raymond
+
+ssh-keygen 
+cat .ssh/id_rsa.pub
+
+touch authorized_keys
+
+nano authorized_keys 
+systemctl restart sshd
+systemctl status sshd
+
+
+
+#edit sshd_config
+Match User Raymond
+        PasswordAuthentication no
+Match User John
+        PubkeyAuthentication no
+
+touch testRaymond.txt
+
+ls -l
+-rw-r--r-- 1 Raymond sudo 14 сак 24 22:22 testRaymond.txt
+
+chmod 644 testRaymond.txt
+
+touch testJohn.sh
+nano testJohn.sh
+chmod 755 testJohn.sh
+
+sudo chsh -s /bin/sh John
+sudo chsh -s /bin/bash John
+
+sudo useradd -m -d /home/newuser -g users -s /bin/sh newuser
+
+./testJohn.sh
+
+
+scp C:\Program Files\PuTTY\README.txt John@192.168.20.128:/home/
+
+
+
+
+
+
+
+
