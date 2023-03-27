@@ -1,0 +1,15 @@
+df -h --output=source,pcent,target >> test1.txt
+
+sudo du -sh /etc/*
+
+sudo du -h /etc/*.*
+
+sudo du -h  /etc/*.* | sort -nr | head
+
+touch test11.txt
+
+sed -n '1p;4p' test11.txt
+
+sed -n /[/]/p test11.txt
+
+sed -n 's|/bin/sh|/bin/bash|p' passwd >> test12.txt
