@@ -1,0 +1,61 @@
+nano /etc/systemd/system/test.service
+
+#test.service
+[Unit]
+Description=Test service
+
+[Service]
+User=vit 
+ExecStart=/usr/local/bin/test.sh
+PIDFile=/var/run/monit.pid
+Restart=always
+RemainAfterExit=no
+
+[Install]
+WantedBy=multi-user.target
+
+systemctl daemond-reload
+systemctl restart test.service
+
+#test.sh
+#!/bin/bash
+watch -n15 'uptime >> up3.txt'
+
+watch -n1 './script.sh >> overload' #(or cronjob)
+
+#script.sh
+!/bin/bash
+
+filename="up3.txt"
+while read -r line; do
+	load_one_min=$(cut -d " " -f11 <<< $line | cut -d "," -f1)
+	if [[ $(cut -d "." -f1 <<< $load_one_min) != "0" ]]; then
+		echo $line
+	fi
+done <$filename
+
+watch -n1 'find . -name 'overload' -size +50k -ls -delete >> cleanup' #(or cronjob)
+
+
+crontab -e
+
+*/10 * * * * systemctl status test.service >> /home/vit/status.txt
+
+crontab -l
+
+cat status.txt
+
+ping 8.8.8.8
+
+CTRL+Z
+
+bg
+
+jobs -l
+
+top
+
+fg 
+
+kill
+
