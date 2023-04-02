@@ -1,0 +1,147 @@
+vit@vit-vm-ubuntu:/mnt$ df -hT
+Filesystem     Type      Size  Used Avail Use% Mounted on
+udev           devtmpfs  1,9G     0  1,9G   0% /dev
+tmpfs          tmpfs     389M  1,9M  388M   1% /run
+/dev/sda5      ext4       20G  9,1G  9,0G  51% /
+tmpfs          tmpfs     1,9G     0  1,9G   0% /dev/shm
+tmpfs          tmpfs     5,0M  4,0K  5,0M   1% /run/lock
+tmpfs          tmpfs     1,9G     0  1,9G   0% /sys/fs/cgroup
+/dev/loop0     squashfs  128K  128K     0 100% /snap/bare/5
+/dev/loop1     squashfs   56M   56M     0 100% /snap/core18/2721
+/dev/loop2     squashfs   64M   64M     0 100% /snap/core20/1852
+/dev/loop3     squashfs  219M  219M     0 100% /snap/gnome-3-34-1804/77
+/dev/loop4     squashfs   56M   56M     0 100% /snap/core18/2714
+/dev/loop5     squashfs  219M  219M     0 100% /snap/gnome-3-34-1804/72
+/dev/loop6     squashfs  347M  347M     0 100% /snap/gnome-3-38-2004/119
+/dev/loop7     squashfs   50M   50M     0 100% /snap/snapd/18596
+/dev/loop9     squashfs   51M   51M     0 100% /snap/snap-store/547
+/dev/loop8     squashfs   46M   46M     0 100% /snap/snap-store/638
+/dev/loop10    squashfs   66M   66M     0 100% /snap/gtk-common-themes/1515
+/dev/loop11    squashfs   92M   92M     0 100% /snap/gtk-common-themes/1535
+/dev/sda1      vfat      511M  4,0K  511M   1% /boot/efi
+tmpfs          tmpfs     389M   36K  389M   1% /run/user/1000
+/dev/sdb1      xfs       2,0G   47M  2,0G   3% /mnt
+
+vit@vit-vm-ubuntu:~$ df -hT
+Filesystem     Type      Size  Used Avail Use% Mounted on
+udev           devtmpfs  1,9G     0  1,9G   0% /dev
+tmpfs          tmpfs     389M  1,9M  388M   1% /run
+/dev/sda5      ext4       20G  9,1G  9,0G  51% /
+tmpfs          tmpfs     1,9G     0  1,9G   0% /dev/shm
+tmpfs          tmpfs     5,0M  4,0K  5,0M   1% /run/lock
+tmpfs          tmpfs     1,9G     0  1,9G   0% /sys/fs/cgroup
+/dev/loop0     squashfs  128K  128K     0 100% /snap/bare/5
+/dev/loop1     squashfs   56M   56M     0 100% /snap/core18/2721
+/dev/loop2     squashfs   64M   64M     0 100% /snap/core20/1852
+/dev/loop3     squashfs  219M  219M     0 100% /snap/gnome-3-34-1804/77
+/dev/loop4     squashfs   56M   56M     0 100% /snap/core18/2714
+/dev/loop5     squashfs  219M  219M     0 100% /snap/gnome-3-34-1804/72
+/dev/loop6     squashfs  347M  347M     0 100% /snap/gnome-3-38-2004/119
+/dev/loop7     squashfs   50M   50M     0 100% /snap/snapd/18596
+/dev/loop9     squashfs   51M   51M     0 100% /snap/snap-store/547
+/dev/loop8     squashfs   46M   46M     0 100% /snap/snap-store/638
+/dev/loop10    squashfs   66M   66M     0 100% /snap/gtk-common-themes/1515
+/dev/loop11    squashfs   92M   92M     0 100% /snap/gtk-common-themes/1535
+/dev/sda1      vfat      511M  4,0K  511M   1% /boot/efi
+tmpfs          tmpfs     389M   32K  389M   1% /run/user/1000
+/dev/sdb1      xfs       3,0G   54M  3,0G   2% /mnt
+
+
+#LVM
+
+vit@vit-vm-ubuntu:~$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1,9G     0  1,9G   0% /dev
+tmpfs           389M  1,9M  388M   1% /run
+/dev/sda5        20G  8,5G  9,7G  47% /
+tmpfs           1,9G     0  1,9G   0% /dev/shm
+tmpfs           5,0M  4,0K  5,0M   1% /run/lock
+tmpfs           1,9G     0  1,9G   0% /sys/fs/cgroup
+/dev/loop0       56M   56M     0 100% /snap/core18/2128
+/dev/loop2       51M   51M     0 100% /snap/snap-store/547
+/dev/loop1       56M   56M     0 100% /snap/core18/2721
+/dev/loop3       66M   66M     0 100% /snap/gtk-common-themes/1515
+/dev/sda1       511M  4,0K  511M   1% /boot/efi
+/dev/loop6       50M   50M     0 100% /snap/snapd/18596
+/dev/loop7       64M   64M     0 100% /snap/core20/1852
+/dev/loop8      128K  128K     0 100% /snap/bare/5
+/dev/loop9      219M  219M     0 100% /snap/gnome-3-34-1804/77
+/dev/loop10      46M   46M     0 100% /snap/snap-store/638
+tmpfs           389M   28K  389M   1% /run/user/1000
+/dev/sr0        2,9G  2,9G     0 100% /media/vit/Ubuntu 20.04.3 LTS amd64
+/dev/loop11      92M   92M     0 100% /snap/gtk-common-themes/1535
+/dev/loop12     350M  350M     0 100% /snap/gnome-3-38-2004/137
+/dev/loop5      219M  219M     0 100% /snap/gnome-3-34-1804/90
+
+vit@vit-vm-ubuntu:~$ sudo pvs
+vit@vit-vm-ubuntu:~$ sudo lvs
+vit@vit-vm-ubuntu:~$ sudo vgs
+
+
+vit@vit-vm-ubuntu:~$ df -h
+Filesystem             Size  Used Avail Use% Mounted on
+udev                   1,9G     0  1,9G   0% /dev
+tmpfs                  389M  1,9M  388M   1% /run
+/dev/sda5               20G  8,5G  9,6G  47% /
+tmpfs                  1,9G     0  1,9G   0% /dev/shm
+tmpfs                  5,0M  4,0K  5,0M   1% /run/lock
+tmpfs                  1,9G     0  1,9G   0% /sys/fs/cgroup
+/dev/loop0              56M   56M     0 100% /snap/core18/2128
+/dev/loop2              51M   51M     0 100% /snap/snap-store/547
+/dev/loop1              56M   56M     0 100% /snap/core18/2721
+/dev/loop3              66M   66M     0 100% /snap/gtk-common-themes/1515
+/dev/sda1              511M  4,0K  511M   1% /boot/efi
+/dev/loop6              50M   50M     0 100% /snap/snapd/18596
+/dev/loop7              64M   64M     0 100% /snap/core20/1852
+/dev/loop8             128K  128K     0 100% /snap/bare/5
+/dev/loop9             219M  219M     0 100% /snap/gnome-3-34-1804/77
+/dev/loop10             46M   46M     0 100% /snap/snap-store/638
+tmpfs                  389M   28K  389M   1% /run/user/1000
+/dev/loop11             92M   92M     0 100% /snap/gtk-common-themes/1535
+/dev/loop12            350M  350M     0 100% /snap/gnome-3-38-2004/137
+/dev/loop5             219M  219M     0 100% /snap/gnome-3-34-1804/90
+/dev/mapper/vg1-lvol0   95M  6,0M   89M   7% /mnt/1
+/dev/mapper/vg1-lvol1   95M  6,0M   89M   7% /mnt/2
+
+
+vit@vit-vm-ubuntu:~$ df -h
+Filesystem             Size  Used Avail Use% Mounted on
+udev                   1,9G     0  1,9G   0% /dev
+tmpfs                  389M  1,9M  388M   1% /run
+/dev/sda5               20G  8,5G  9,6G  47% /
+tmpfs                  1,9G     0  1,9G   0% /dev/shm
+tmpfs                  5,0M  4,0K  5,0M   1% /run/lock
+tmpfs                  1,9G     0  1,9G   0% /sys/fs/cgroup
+/dev/loop0              56M   56M     0 100% /snap/core18/2128
+/dev/loop2              51M   51M     0 100% /snap/snap-store/547
+/dev/loop1              56M   56M     0 100% /snap/core18/2721
+/dev/loop3              66M   66M     0 100% /snap/gtk-common-themes/1515
+/dev/sda1              511M  4,0K  511M   1% /boot/efi
+/dev/loop6              50M   50M     0 100% /snap/snapd/18596
+/dev/loop7              64M   64M     0 100% /snap/core20/1852
+/dev/loop8             128K  128K     0 100% /snap/bare/5
+/dev/loop9             219M  219M     0 100% /snap/gnome-3-34-1804/77
+/dev/loop10             46M   46M     0 100% /snap/snap-store/638
+tmpfs                  389M   28K  389M   1% /run/user/1000
+/dev/loop11             92M   92M     0 100% /snap/gtk-common-themes/1535
+/dev/loop12            350M  350M     0 100% /snap/gnome-3-38-2004/137
+/dev/loop5             219M  219M     0 100% /snap/gnome-3-34-1804/90
+/dev/mapper/vg1-lvol0  295M  7,9M  287M   3% /mnt/1
+/dev/mapper/vg1-lvol1   95M  6,0M   89M   7% /mnt/2
+vit@vit-vm-ubuntu:~$ sudo pvs
+  PV         VG  Fmt  Attr PSize   PFree
+  /dev/sdb   vg1 lvm2 a--  200,00m    0 
+  /dev/sdc   vg1 lvm2 a--  200,00m    0 
+vit@vit-vm-ubuntu:~$ sudo lvs
+  LV    VG  Attr       LSize   Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+  lvol0 vg1 -wi-ao---- 300,00m                                                    
+  lvol1 vg1 -wi-ao---- 100,00m                                                    
+vit@vit-vm-ubuntu:~$ sudo vgs
+  VG  #PV #LV #SN Attr   VSize   VFree
+  vg1   2   2   0 wz--n- 400,00m    0 
+
+
+
+
+
+
