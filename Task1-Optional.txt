@@ -1,0 +1,38 @@
+gpg --gen-key
+
+gpg -k
+
+gpg --edit-key Vittest
+
+gpg> expire > 0
+
+gpg> save
+
+gpg --export --armor --output public.key Vittest
+
+gpg --list-keys
+
+gpg --export-secret-keys --output privkey.bin Vittest
+
+echo 'EncyptMe AUE Please'| gpg -e -a -r Vittest
+
+echo 'EncryptMe AUE Please'| gpg -e -a -r Vittest >> encrypt.txt
+
+gpg -r Vittest -e -a -c privkey.bin
+
+gpg --delete-secret-keys Vittest
+
+gpg --delete-keys Vittest
+
+gpg --list-keys
+
+gpg --output privkey.bind --decrypt privkey.bin.asc
+
+gpg --import privkey.bind
+
+gpt --list-secret-key
+
+gpg -r Vittest -d encrypt.txt >> d.txt
+
+cat d.txt 
+EncryptMe AUE Please
